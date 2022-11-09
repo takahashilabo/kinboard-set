@@ -1,6 +1,4 @@
-class TopsController < ApplicationController
+class TopController < ApplicationController
   def main
   end
-    
 end
-

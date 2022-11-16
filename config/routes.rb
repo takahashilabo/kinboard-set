@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
+  get 'users/profile'
   get 'top/main'
   root 'top#login'
   post 'top/login'

@@ -1,1 +1,12 @@
-index
+<% @users.each do |my| %>
+   <p> 
+       id: <%= my.uid %>
+       pass: <%= my.pass %>
+       ニックネーム: <%= my.name %>
+       <%= link_to '削除', user_path(my.id), method: :delete %>
+    </p>
+<% end %>
+
+<p><%= link_to '新規追加', new_user_path %></p>
+<p><%= link_to 'トップに戻る', top_main_path %><</p>
+

@@ -21,4 +21,13 @@ class UsersController < ApplicationController
     user.destroy
     redirect_to users_path
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.new(uid: params[:user][:uid], pass: params[:user][:pass], name: params[:user][:name])
+    redirect_to users_path
+  end
 end

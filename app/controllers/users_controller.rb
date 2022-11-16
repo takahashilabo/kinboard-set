@@ -27,7 +27,8 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.new(uid: params[:user][:uid], pass: params[:user][:pass], name: params[:user][:name])
+    user = User.find(params[:id])
+    user.update(name: params[:user][:name])
     redirect_to users_path
   end
 end

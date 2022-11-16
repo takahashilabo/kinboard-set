@@ -1,3 +1,17 @@
+table {
+  border-collapse: collapse;
+  color: black; /* 全体の文字色 */
+  background-color: #FFF; /* 全体の背景色 */
+}
+th, td {
+  padding: 5px 15px;
+  border: solid 2px #708090;
+}
+th {
+  color: #4d2a22;/* 見出しの文字色 */
+  background-color: #efefef; /* 見出しの背景色 */
+}
+
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

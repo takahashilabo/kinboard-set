@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post 'top/login'
   get 'top/login'
   get 'top/logout'
+  resources :thres
+  post '/thres/search', to: 'thres#search'
 end

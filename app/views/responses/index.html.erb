@@ -1,0 +1,12 @@
+<% @responses.each do |my| %>
+   <p> 
+       <%= @count = @count + 1 %>：
+       <%= my.message %>
+       <%= my.tdate %>
+       <%= link_to '削除', response_path(my.id), method: :delete %>
+    </p>
+<% end %>
+
+<p><%= link_to 'レスの追加', new_response_path %></p>
+<p><%= link_to 'スレに戻る', thres_path %></p>
+<p><%= link_to 'トップに戻る', top_main_path %></p>

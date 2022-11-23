@@ -1,0 +1,10 @@
+<% @thres.each do |my| %>
+   <p> 
+       <%= my.message %>
+       <%= my.t_date %>
+       <%= link_to '削除', thre_path(my.id), method: :delete %>
+    </p>
+<% end %>
+
+<p><%= link_to '新規追加', new_thre_path %></p>
+<p><%= link_to 'トップに戻る', top_main_path %></p>

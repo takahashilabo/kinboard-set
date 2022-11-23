@@ -36,4 +36,8 @@ class ThresController < ApplicationController
     @thres = Thre.where('title LIKE(?)', "%#{params[:keyword]}%")
     render "index"
   end
+  
+  def show
+    @thre = Thre.find(params[:id])
+  end
 end

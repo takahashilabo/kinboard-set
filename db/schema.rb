@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2022_11_16_090029) do
+ActiveRecord::Schema.define(version: 2022_11_23_072659) do
 
   create_table "dislikes", force: :cascade do |t|
     t.integer "user_id"
@@ -23,14 +22,25 @@ ActiveRecord::Schema.define(version: 2022_11_16_090029) do
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "message_id"
-=======
-ActiveRecord::Schema.define(version: 2022_11_23_063939) do
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.string "message"
+    t.integer "user_id"
+    t.integer "thre_id"
+    t.binary "image"
+    t.datetime "tdate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "thres", force: :cascade do |t|
     t.string "title"
+    t.string "message"
     t.integer "user_id"
     t.datetime "t_date"
->>>>>>> set_thread
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

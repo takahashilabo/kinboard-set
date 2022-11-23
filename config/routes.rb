@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'responses/index'
   resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
   get 'users/profile'
   get 'top/main'
@@ -9,4 +10,6 @@ Rails.application.routes.draw do
   get 'top/logout'
   resources :thres
   post '/thres/search', to: 'thres#search'
+  resources :responses
+  get '/get_image/:id', to: 'responses#get_image'
 end

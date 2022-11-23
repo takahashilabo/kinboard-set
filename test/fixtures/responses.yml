@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyString
+  user_id: 1
+  image: 
+  tdate: 2022-11-23 07:26:59
+
+two:
+  message: MyString
+  user_id: 1
+  image: 
+  tdate: 2022-11-23 07:26:59

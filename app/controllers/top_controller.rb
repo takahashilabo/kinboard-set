@@ -11,7 +11,6 @@ class TopController < ApplicationController
         if User.find_by(uid: params[:uid], pass: params[:pass])
             session[:login_uid] = params[:uid]
             render top_main_path
-            
         end
   end
     

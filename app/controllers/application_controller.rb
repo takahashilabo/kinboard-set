@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
             User.find_by(uid: session[:login_uid])
         end
     end
+    helper_method :current_user
 end

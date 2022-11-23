@@ -1,3 +1,9 @@
+.current_user {
+    font-size: large;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

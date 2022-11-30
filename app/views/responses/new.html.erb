@@ -1,5 +1,7 @@
 <%= form_for @response , url: {action: :create} do |f| %>
     <%= f.label :message, 'メッセージ' %>
     <%= f.text_field :message %>
+    <%= f.label :image, '画像' %>
+    <%= f.text_field :image, accept: "image/*" %>
     <%= f.submit '登録' %>
 <% end %>

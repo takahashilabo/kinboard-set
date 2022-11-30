@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2022_11_30_061834) do
 
   create_table "thres", force: :cascade do |t|
     t.string "title"
-    t.string "message"
     t.integer "user_id"
     t.datetime "t_date"
     t.datetime "created_at", null: false

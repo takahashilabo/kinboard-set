@@ -8,7 +8,7 @@ class ThresController < ApplicationController
   end
   
   def show
-    @thres = Thre.all
+    @responses = Response.all
   end
   
   def create

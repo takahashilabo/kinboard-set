@@ -1,10 +1,19 @@
-<% @thres.each do |my| %>
-   <p> 
-       <%= my.message %>
-       <%= my.t_date %>
-       <%= link_to '削除', thre_path(my.id), method: :delete %>
+<% thre = Thre.find_by(id: params[:id]) %>
+<h1><%= thre.title %></h1>
+
+<h2>レス一覧</h2>
+
+<% Response.where(user_id: current_user.uid).each do |res| %>
+    <p>
+    <%= res.id %>
+    投稿者：
+    <%= User.find_by(uid: res.user_id).name %>
+    <%= res.tdate.strftime("%Y/%m/%d %X") %><br>
+    <%= res.message %><br>
+    評価：
     </p>
 <% end %>
 
-<p><%= link_to '新規追加', new_thre_path %></p>
+
+<p><%= link_to 'スレッド一覧に戻る', thres_path %></p>
 <p><%= link_to 'トップに戻る', top_main_path %></p>

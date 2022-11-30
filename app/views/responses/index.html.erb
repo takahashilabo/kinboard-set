@@ -1,9 +1,10 @@
-<% @responses.each do |my| %>
-   <p> 
+<% @responses.each do |res| %>
+   <p>
        <%= @count = @count + 1 %>：
-       <%= my.message %>
-       <%= my.tdate %>
-       <%= link_to '削除', response_path(my.id), method: :delete %>
+       <%= res.message %>
+       <%= res.tdate %>
+       <%= res.user_id %>
+       <%= link_to '削除', response_path(res.id), method: :delete %>
     </p>
 <% end %>
 

@@ -9,7 +9,8 @@ class ResponsesController < ApplicationController
   end
   
   def create
-    @response = Response.new(message: params[:response][:message], user_id: params[:response][:user_id], thre_id: params[:response][:thre_id], tdate: Time.current)
+    user = User.find_by(uid: current_user.uid)
+    @response = Response.new(message: params[:response][:message], user_id: user.uid, thre_id: params[:response][:thre_id], tdate: Time.current)
     if @response.save
       redirect_to responses_path #"/**"
     else

@@ -7,6 +7,10 @@ class ThresController < ApplicationController
     @thre = Thre.new
   end
   
+  def show
+    @thres = Thre.all
+  end
+  
   def create
     @thre = Thre.new(title: params[:thre][:title], user_id: params[:thre][:user_id], t_date: Time.current)
     if @thre.save

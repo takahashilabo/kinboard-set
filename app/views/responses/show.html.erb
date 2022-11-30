@@ -1,0 +1,14 @@
+<p>
+    <%= @response.tdate %>
+</p>
+<p>
+    <%= @response.message %>
+</p>
+<p>
+    <% if @response.image.attached? %>
+        <%= image_tag @response.image %>
+    <% else %>
+        <%= image_tag 'n.png', width: '0%', height: '0%' %>
+    <% end %>
+</p>
+<p><%= link_to '戻る', responses_path %></p>

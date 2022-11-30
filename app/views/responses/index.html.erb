@@ -1,9 +1,22 @@
 <% @responses.each do |res| %>
+<<<<<<< HEAD
    <p>
        <%= @count = @count + 1 %>：
        <%= res.message %>
        <%= res.tdate %>
        <%= image_tag res.image %>
+=======
+   <p> 
+       <%= @count = @count + 1 %>：
+       <%= res.message %>
+       <%= res.tdate %>
+       <% if res.image.attached? %>
+           <%= image_tag res.image, width: '10%', height: '10%'  %>
+       <% else %>
+           <%= image_tag 'n.png', width: '0%', height: '0%' %>
+       <% end %>
+       <%= link_to '表示', response_path(res.id) %>
+>>>>>>> strage
        <%= link_to '削除', response_path(res.id), method: :delete %>
     </p>
 <% end %>

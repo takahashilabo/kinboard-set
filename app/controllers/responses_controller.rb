@@ -8,9 +8,13 @@ class ResponsesController < ApplicationController
     @response = Response.new
   end
   
-  def create #スレッドと紐づけする用に少し変更しました
+  def create
     user = User.find_by(uid: current_user.uid)
     @response = Response.new(message: params[:response][:message], user_id: user.uid, thre_id: params[:response][:thre_id], tdate: Time.current)
+    if image = params[:response][:image]
+      @response.image.attach(image)
+    end
+
     if @response.save
       redirect_to responses_path #"/**"
     else
@@ -22,5 +26,9 @@ class ResponsesController < ApplicationController
     response = Response.find(params[:id])
     response.destroy
     redirect_to responses_path
+  end
+  
+  def show
+    @response = Response.find(params[:id])
   end
 end

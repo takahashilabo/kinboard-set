@@ -8,6 +8,7 @@
    <p> 
        <%= my.title %>
        <%= my.t_date %>
+       <%= link_to '閲覧', thre_path(my.id)%>
        <%= link_to '削除', thre_path(my.id), method: :delete %>
        <%= link_to '編集', edit_thre_path(my.id) %>
     </p>

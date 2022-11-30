@@ -1,10 +1,15 @@
-<% @responses.each do |my| %>
+<% @responses.each do |res| %>
    <p> 
        <%= @count = @count + 1 %>：
-       <%= my.message %>
-       <%= my.tdate %>
-       <%= image_tag my.image %>
-       <%= link_to '削除', response_path(my.id), method: :delete %>
+       <%= res.message %>
+       <%= res.tdate %>
+       <% if res.image.attached? %>
+           <%= image_tag res.image, width: '10%', height: '10%'  %>
+       <% else %>
+           <%= image_tag 'n.png', width: '0%', height: '0%' %>
+       <% end %>
+       <%= link_to '表示', response_path(res.id) %>
+       <%= link_to '削除', response_path(res.id), method: :delete %>
     </p>
 <% end %>
 

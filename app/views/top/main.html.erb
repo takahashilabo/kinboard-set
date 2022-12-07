@@ -1,19 +1,25 @@
-<h1>Kinboardへようこそ</h1>
-<%= @db_pass %>
-
-<% if current_user %>
-    <h class="current_user"><%= current_user.name %></h>
-    でログイン中です。<br>
-    <p><%= link_to 'アカウント情報', users_profile_path %></p>
-    <p><%= link_to 'ログアウト', top_logout_path %></p>
-<% else %>
-    <%= link_to 'ログイン', top_login_path %>
-<% end %>
-
-<p><%= link_to 'スレ一覧', thres_path %></p>
-<%= link_to 'ログイン', top_login_path %>
-<%= link_to 'ログアウト', top_logout_path %>
-<%= link_to 'アカウント情報', users_profile_path %>
-<%= link_to 'パスワード情報', users_path %>
-
+<div class = mai>
+    <h1>Kinboardへようこそ!</h1>
+    
+    <h4>このサイトは、気軽に誰でもつぶやける掲示板サイトです</h4>
+    
+    <%= @db_pass %>
+    
+    <% if current_user %>
+        <h class="current_user"><%= current_user.name %></h>
+        でログイン中です。<br>
+        <p><%= link_to 'アカウント情報', users_profile_path %></p>
+        <p><%= link_to 'ログアウト', top_logout_path %></p>
+    <% else %>
+        <p><%= link_to 'ログイン', top_login_path %></p>
+    <% end %>
+    
+        <p>
+            <%= link_to 'スレ一覧', thres_path %>
+            <%= link_to 'ログイン', top_login_path %>
+            <%= link_to 'ログアウト', top_logout_path %>
+            <%= link_to 'アカウント情報', users_profile_path %>
+            <%= link_to 'パスワード情報', users_path %>
+        </p>
+</div>
 

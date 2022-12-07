@@ -8,8 +8,29 @@
     text-align: center;
 }
 
-.log body {
-    background-color:#FFFAF0;
+.log h1 {
+    font-size: 3rem
+}
+
+.log h4 {
+    font-size: 20px;
+}
+
+.log form {
+    font-size: 25px;
+}
+
+.mai {
+    text-align: center;
+    padding: 30px;
+}
+
+.mai h1 {
+    font-size: 3rem
+}
+
+.mai h4 {
+    font-size: 16px;
 }
 
 

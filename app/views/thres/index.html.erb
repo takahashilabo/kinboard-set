@@ -1,19 +1,21 @@
-<h1>スレ一覧</h1>
-<%= form_tag thres_search_path, method: :post do %>
-    <%= label_tag 'キーワード' %>
-    <%= text_field_tag :keyword %>
-    <%= submit_tag '検索' %>
-<% end %>
-<% @thres.each do |my| %>
-   <p> 
-       <%= my.title %>
-       <%= my.t_date %>
-       <%= link_to '閲覧', thre_path(my.id)%>
-       <%= link_to '削除', thre_path(my.id), method: :delete %>
-       <%= link_to '編集', edit_thre_path(my.id) %>
-       <%= link_to 'メッセージ', responses_path(my.id) %>
-    </p>
-<% end %>
-
-<p><%= link_to '新規追加', new_thre_path %></p>
-<p><%= link_to 'トップに戻る', top_main_path %></p>
+<div class = thr>
+    <h1>スレ一覧</h1>
+    <%= form_tag thres_search_path, method: :post do %>
+        <%= label_tag 'キーワード' %>
+        <%= text_field_tag :keyword %>
+        <%= submit_tag '検索' %>
+    <% end %>
+    <% @thres.each do |my| %>
+       <p> 
+           <%= my.title %>
+           <%= my.t_date %>
+           <%= link_to '閲覧', thre_path(my.id)%>
+           <%= link_to '削除', thre_path(my.id), method: :delete %>
+           <%= link_to '編集', edit_thre_path(my.id) %>
+           <%= link_to 'メッセージ', responses_path(my.id) %>
+        </p>
+    <% end %>
+    
+    <p><%= link_to '新規追加', new_thre_path %></p>
+    <p><%= link_to 'トップに戻る', top_main_path %></p>
+</div>

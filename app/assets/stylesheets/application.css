@@ -33,6 +33,13 @@
     font-size: 16px;
 }
 
+.thr {
+    text-align: center;
+}
+
+.thr h1 {
+    font-size: 3rem
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

@@ -4,6 +4,15 @@
     text-decoration: underline;
 }
 
+.log {
+    text-align: center;
+}
+
+.log body {
+    background-color:#FFFAF0;
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

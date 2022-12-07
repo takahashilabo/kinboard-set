@@ -2,22 +2,22 @@
 ※テスト用にidが一番若いユーザーの情報を取得
 
 <h2 class="info">基本情報</h2>
-    <% user = User.first %>
+    <% user = User.find_by(uid: current_user) %>
         idが
-        <%= user.id %>
+        <%= current_user.uid %>
         のユーザー情報です。
         <table initialTab="table_info" %>
             <tr>
                 <th>ニックネーム</th>
-                <td><%= user.name %></td>
+                <td><%= current_user.name %></td>
             </tr>
             <tr>
                 <th>ユーザーID</th>
-                <td><%= user.uid %></td>
+                <td><%= current_user.uid %></td>
             </tr>
             <tr>
                 <th>登録日時</th>
-                <td><%= user.created_at.strftime('%Y年%m月%d日') %></td>
+                <td><%= current_user.created_at.strftime('%Y年%m月%d日') %></td>
             </tr>
             <tr>
                 <th>通算高評価</th>

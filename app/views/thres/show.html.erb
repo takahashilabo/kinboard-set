@@ -19,6 +19,25 @@
            <%= image_tag 'n.png', width: '0px', height: '0px' %><br>
     <% end %>
     評価：
+    <%= link_to '👍', likes_path(res_id: res.id), method: :post %>
+    <% like_n = Like.where(response_id: res.id).count %>
+    <% if like_n == 0 %>
+        <%= like_n %>
+    <% elsif like_n >= 10 %>
+        <h class="good_count_2">+<%= like_n %></h>
+    <% else %>
+        <h class="good_count">+<%= like_n %></h>
+    <% end %>
+    　
+    <%= link_to '👎', dislikes_path(res_id: res.id), method: :post %>
+    <% dislike_n = Dislike.where(response_id: res.id).count %>
+    <% if dislike_n == 0 %>
+        <%= dislike_n %>
+    <% elsif dislike_n >= 10 %>
+        <h class="bad_count_2">－<%= dislike_n %></h>
+    <% else %>
+        <h class="bad_count">－<%= dislike_n %></h>
+    <% end %>
     </p>
 <% end %>
 </div>

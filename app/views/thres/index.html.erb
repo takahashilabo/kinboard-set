@@ -12,10 +12,10 @@
            <%= link_to '閲覧', thre_path(my.id)%>
            <%= link_to '削除', thre_path(my.id), method: :delete %>
            <%= link_to '編集', edit_thre_path(my.id) %>
-           <%= link_to 'メッセージ', responses_path(my.id) %>
         </p>
     <% end %>
     
     <p><%= link_to '新規追加', new_thre_path %></p>
     <p><%= link_to 'トップに戻る', top_main_path %></p>
 </div>
+

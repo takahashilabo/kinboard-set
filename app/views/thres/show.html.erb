@@ -1,3 +1,4 @@
+<div class = thred >
 <% thre = Thre.find_by(id: params[:id]) %>
 <h1><%= thre.title %></h1>
 
@@ -8,12 +9,20 @@
     <%= res.id %>
     投稿者：
     <%= User.find_by(uid: res.user_id).name %>
-    <%= res.tdate.strftime("%Y/%m/%d %X") %><br>
+    <%= res.tdate.strftime("%Y/%m/%d %X") %>
+    <%= link_to '表示', response_path(res.id) %>
+    <%= link_to '削除', response_path(res.id), method: :delete %><br>
     <%= res.message %><br>
+    <% if res.image.attached? %>
+           <%= image_tag res.image, width: '10%', height: '10%'  %><br>
+    <% else %>
+           <%= image_tag 'n.png', width: '0px', height: '0px' %><br>
+    <% end %>
     評価：
     </p>
 <% end %>
+</div>
 
-
+<p><%= link_to '投稿する', new_response_path %></p>
 <p><%= link_to 'スレッド一覧に戻る', thres_path %></p>
 <p><%= link_to 'トップに戻る', top_main_path %></p>

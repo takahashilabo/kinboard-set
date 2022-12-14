@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   resources :thres
   post '/thres/search', to: 'thres#search'
   resources :responses
+  resources :likes
+  resources :dislikes
   get '/get_image/:id', to: 'responses#get_image'
 end

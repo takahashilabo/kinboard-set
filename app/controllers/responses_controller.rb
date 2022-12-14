@@ -2,6 +2,7 @@ class ResponsesController < ApplicationController
   def index
     @responses = Response.all
     @count = 0
+    @thre_id = params[:thre_id]
   end
   
   def new

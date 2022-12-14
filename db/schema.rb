@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 2022_11_30_061834) do
 
   create_table "dislikes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "message_id"
+    t.integer "response_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "message_id"
+    t.integer "response_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2022_11_30_061834) do
 
   create_table "thres", force: :cascade do |t|
     t.string "title"
+    t.string "message"
     t.integer "user_id"
     t.datetime "t_date"
     t.datetime "created_at", null: false

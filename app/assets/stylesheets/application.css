@@ -4,6 +4,27 @@
     text-decoration: underline;
 }
 
+.good_count {
+    color: red;
+    font-weight: bold
+}
+
+.good_count_2 {
+    color: red;
+    font-size: larger;
+    font-weight: bold
+}
+
+.bad_count {
+    color: blue;
+    font-weight: bold
+}
+
+.bad_count_2 {
+    color: blue;
+    font-size: larger;
+    font-weight: bold
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

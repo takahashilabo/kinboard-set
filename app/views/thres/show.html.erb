@@ -11,9 +11,28 @@
     <%= res.tdate.strftime("%Y/%m/%d %X") %><br>
     <%= res.message %><br>
     評価：
+    <%= link_to '👍', likes_path(res_id: res.id), method: :post %>
+    <% like_n = Like.where(response_id: res.id).count %>
+    <% if like_n == 0 %>
+        <%= like_n %>
+    <% elsif like_n >= 10 %>
+        <h class="good_count_2">+<%= like_n %></h>
+    <% else %>
+        <h class="good_count">+<%= like_n %></h>
+    <% end %>
+    　
+    <%= link_to '👎', dislikes_path(res_id: res.id), method: :post %>
+    <% dislike_n = Dislike.where(response_id: res.id).count %>
+    <% if dislike_n == 0 %>
+        <%= dislike_n %>
+    <% elsif dislike_n >= 10 %>
+        <h class="bad_count_2">－<%= dislike_n %></h>
+    <% else %>
+        <h class="bad_count">－<%= dislike_n %></h>
+    <% end %>
     </p>
 <% end %>
 
-
+<p><%= link_to 'レスを追加', new_response_path(id: params[:id]) %></p>
 <p><%= link_to 'スレッド一覧に戻る', thres_path %></p>
 <p><%= link_to 'トップに戻る', top_main_path %></p>

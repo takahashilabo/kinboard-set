@@ -2,6 +2,7 @@ class ResponsesController < ApplicationController
   def index
     @responses = Response.all
     @count = 0
+    @thre_id = params[:thre_id]
   end
   
   def new
@@ -16,7 +17,8 @@ class ResponsesController < ApplicationController
     end
 
     if @response.save
-      redirect_to responses_path #"/**"
+      print params[:id]
+      redirect_back(fallback_location: root_path)
     else
       render 'new'
     end

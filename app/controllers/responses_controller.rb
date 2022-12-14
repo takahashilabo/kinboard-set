@@ -16,7 +16,7 @@ class ResponsesController < ApplicationController
     end
 
     if @response.save
-      redirect_to responses_path #"/**"
+      redirect_to thre_path(current_user.id) #"/**"
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class ResponsesController < ApplicationController
   def destroy
     response = Response.find(params[:id])
     response.destroy
-    redirect_to responses_path
+    redirect_to thre_path(current_user.id)
   end
   
   def show

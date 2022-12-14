@@ -1,5 +1,6 @@
+
 <p>
-    <%= @response.tdate %>
+    <%= @response.tdate.strftime("%Y/%m/%d %X") %>
 </p>
 <p>
     <%= @response.message %>
@@ -11,4 +12,4 @@
         <%= image_tag 'n.png', width: '0%', height: '0%' %>
     <% end %>
 </p>
-<p><%= link_to '戻る', responses_path %></p>
+<p><%= link_to '戻る', thre_path(current_user.id) %></p>

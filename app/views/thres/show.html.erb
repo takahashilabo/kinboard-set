@@ -6,7 +6,7 @@
 
 <% Response.where(user_id: current_user.uid).each do |res| %>
     <p>
-    <%= res.id %>
+    <%= res.id %>.
     投稿者：
     <%= User.find_by(uid: res.user_id).name %>
     <%= res.tdate.strftime("%Y/%m/%d %X") %>
